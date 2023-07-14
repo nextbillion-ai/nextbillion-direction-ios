@@ -22,7 +22,7 @@ Pod::Spec.new do |spec|
 
   spec.author       = { "Nextbillion.AI" => "" }
 
-  spec.source       = { :git => "git@github.com:nextbillion-ai/nextbillion-direction-ios.git" }
+  spec.source       = { :git => "https://github.com/nextbillion-ai/nextbillion-direction-ios.git" }
 
   spec.vendored_frameworks = 'NbmapDirections.xcframework'
   spec.platform     = :ios, '11.0'
