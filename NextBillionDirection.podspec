@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "NextBillionDirection"
   spec.version      = "1.0.3"
-  spec.summary      = "The nextbillion.ai iOS  Turf cocoapods repo"
+  spec.summary      = "The nextbillion.ai iOS  Direction cocoapods repo"
 
   spec.description  = <<-DESC
   This is a iOS xcframework repository, users can integrate with Nextbillion iOS Direction through cocoaPods 
@@ -26,7 +26,6 @@ Pod::Spec.new do |spec|
 
   spec.vendored_frameworks = 'NbmapDirections.xcframework'
   spec.platform     = :ios, '11.0'
-  spec.swift_version = '4.0'
 
   spec.user_target_xcconfig = { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES' }
   spec.pod_target_xcconfig = { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES' }
