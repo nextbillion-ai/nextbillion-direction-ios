@@ -355,7 +355,7 @@ __PROTOCOL_CLASS_PROPERTIES_NSSecureCoding
 __PROTOCOL_INSTANCE_METHODS_NSCoding
 __PROTOCOL_METHOD_TYPES_NSCoding
 <swift-imported-modules>
-Apple Swift version 5.5.2 effective-4.1.50 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 /Users/qiu/Desktop/nb_workspace/ios/nb-directions-ios2/NbmapDirections/CoreLocation.swift
 _conditionallyBridgeFromObjectiveC
 <compiler-generated>
