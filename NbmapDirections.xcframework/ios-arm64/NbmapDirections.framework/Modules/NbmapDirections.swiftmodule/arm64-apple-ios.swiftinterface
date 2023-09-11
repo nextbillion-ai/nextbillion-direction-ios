@@ -99,6 +99,15 @@ extension NbmapDirections.NBRoadClasses : Swift.CustomStringConvertible {
     get
   }
 }
+@objc open class TravelledRawLocation : ObjectiveC.NSObject {
+  final public let latitude: Swift.Double
+  final public let longitude: Swift.Double
+  final public let accuracy: Swift.Double
+  final public let bearing: Swift.Double
+  public init(latitude: Swift.Double, longitude: Swift.Double, accuracy: Swift.Double, bearing: Swift.Double)
+  public func toJSONDictionary() -> NbmapDirections.JSONDictionary
+  @objc deinit
+}
 @_hasMissingDesignatedInitializers public class StepLink {
   @objc deinit
 }
@@ -214,8 +223,11 @@ open class RoundaboutCalibrator {
   @objc public func encode(with coder: Foundation.NSCoder)
   @objc required public init?(coder decoder: Foundation.NSCoder)
   @objc open var waypoints: [NbmapDirections.Waypoint]
+  @objc open var travelledRawLocations: [NbmapDirections.TravelledRawLocation]
   @objc open var profileIdentifier: NbmapDirections.NBNavigationMode
   @objc open var shapeFormat: NbmapDirections.RouteShapeFormat
+  @objc open var originalShape: Swift.String
+  open var originalShapFormat: NbmapDirections.RouteShapeFormat?
   @objc open var routeShapeResolution: NbmapDirections.RouteShapeResolution
   @objc open var locale: Foundation.Locale
   @objc open var distanceMeasurementSystem: NbmapDirections.MeasurementSystem {
@@ -304,6 +316,7 @@ extension NbmapDirections.NBLaneIndication : Swift.CustomStringConvertible {
   }
   @objc deinit
 }
+public typealias JSONDictionary = [Swift.String : Any]
 public let NBDirectionsErrorDomain: Swift.String
 @_inheritsConvenienceInitializers @objc(NBDirections) open class Directions : ObjectiveC.NSObject {
   public typealias RouteCompletionHandler = (_ routes: [NbmapDirections.Route]?, _ error: Foundation.NSError?) -> Swift.Void
