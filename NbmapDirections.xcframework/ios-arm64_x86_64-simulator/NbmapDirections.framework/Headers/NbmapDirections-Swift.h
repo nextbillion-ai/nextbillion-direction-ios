@@ -272,7 +272,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NBDirections
 @class NBWaypoint;
 @class NSNumber;
 @class NSCoder;
+@class TravelledRawLocation;
 enum NBRouteShapeFormat : NSUInteger;
+@class NSString;
 enum NBRouteShapeResolution : NSUInteger;
 @class NSLocale;
 enum NBMeasurementSystem : NSUInteger;
@@ -299,13 +301,22 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 /// A waypoint object indicates a location to visit, as well as an optional heading from which to approach the location.
 /// The array should contain at least two waypoints (the source and destination) and at most 25 waypoints.
 @property (nonatomic, copy) NSArray<NBWaypoint *> * _Nonnull waypoints;
+/// A list of <code>TravelledRawLocation</code> objects representing the raw locations travelled during the navigation process
+/// The List should contain at most 100 raw location data
+@property (nonatomic, copy) NSArray<TravelledRawLocation *> * _Nonnull travelledRawLocations;
 /// A string specifying the primary mode of transportation for the routes.
 /// This property should be set to <code>NBNavigationModeCar</code>, <code>NBNavigationModeAuto</code>, <code>NBNavigationModeBike</code>, <code>NBNavigationMode4W</code>,<code>NBNavigationMode2W</code>,<code>NBNavigationMode6W</code>, or <code>NBNavigationModeEscooter</code>. The default value of this property is <code>NBNavigationMode4W</code>, which specifies driving directions.
 @property (nonatomic) NBNavigationMode _Nonnull profileIdentifier;
 /// Format of the data from which the shapes of the returned route and its steps are derived.
 /// This property has no effect on the returned shape objects, although the choice of format can significantly affect the size of the underlying HTTP response.
-/// The default value of this property is <code>polyline</code>.
+/// The default value of this property is <code>polyline6</code>.
 @property (nonatomic) enum NBRouteShapeFormat shapeFormat;
+/// An encoded polyline string
+/// Accepts polyline and polyline6 encoded geometry as input.
+/// If this parameter is provided, the only other parameters which will be considered are originalShapeType, lang and key.
+/// The rest of the parameters in the input request will be ignored.
+/// Example: geometry=mxtnEpbcqU?_\pBBBca@pk@A@iSjA?BcZnG??{BaBuq@sDAEsZ_S@I{pA_SA@qu@gBuBEwVhcAEZekHgLP
+@property (nonatomic, copy) NSString * _Nonnull originalShape;
 /// Resolution of the shape of the returned route.
 /// This property has no effect on the shape of the returned route’s steps.
 /// The default value of this property is <code>full</code>, specifying a low-resolution route shape.
@@ -325,7 +336,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 @end
 
 @class NBNavRouteLeg;
-@class NSString;
 @class NSDate;
 
 /// A <code>DirectionsResult</code> represents a result returned from either the Nbmap Directions service.
@@ -1011,6 +1021,13 @@ typedef SWIFT_ENUM_NAMED(NSInteger, NBTransportType, "TransportType", open) {
 /// The user should consult the train’s timetable. For cycling directions, the user should also verify that bicycles are permitted onboard the train.
   NBTransportTypeTrain = 7,
 };
+
+
+SWIFT_CLASS("_TtC15NbmapDirections20TravelledRawLocation")
+@interface TravelledRawLocation : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 
@@ -1431,7 +1448,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NBDirections
 @class NBWaypoint;
 @class NSNumber;
 @class NSCoder;
+@class TravelledRawLocation;
 enum NBRouteShapeFormat : NSUInteger;
+@class NSString;
 enum NBRouteShapeResolution : NSUInteger;
 @class NSLocale;
 enum NBMeasurementSystem : NSUInteger;
@@ -1458,13 +1477,22 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 /// A waypoint object indicates a location to visit, as well as an optional heading from which to approach the location.
 /// The array should contain at least two waypoints (the source and destination) and at most 25 waypoints.
 @property (nonatomic, copy) NSArray<NBWaypoint *> * _Nonnull waypoints;
+/// A list of <code>TravelledRawLocation</code> objects representing the raw locations travelled during the navigation process
+/// The List should contain at most 100 raw location data
+@property (nonatomic, copy) NSArray<TravelledRawLocation *> * _Nonnull travelledRawLocations;
 /// A string specifying the primary mode of transportation for the routes.
 /// This property should be set to <code>NBNavigationModeCar</code>, <code>NBNavigationModeAuto</code>, <code>NBNavigationModeBike</code>, <code>NBNavigationMode4W</code>,<code>NBNavigationMode2W</code>,<code>NBNavigationMode6W</code>, or <code>NBNavigationModeEscooter</code>. The default value of this property is <code>NBNavigationMode4W</code>, which specifies driving directions.
 @property (nonatomic) NBNavigationMode _Nonnull profileIdentifier;
 /// Format of the data from which the shapes of the returned route and its steps are derived.
 /// This property has no effect on the returned shape objects, although the choice of format can significantly affect the size of the underlying HTTP response.
-/// The default value of this property is <code>polyline</code>.
+/// The default value of this property is <code>polyline6</code>.
 @property (nonatomic) enum NBRouteShapeFormat shapeFormat;
+/// An encoded polyline string
+/// Accepts polyline and polyline6 encoded geometry as input.
+/// If this parameter is provided, the only other parameters which will be considered are originalShapeType, lang and key.
+/// The rest of the parameters in the input request will be ignored.
+/// Example: geometry=mxtnEpbcqU?_\pBBBca@pk@A@iSjA?BcZnG??{BaBuq@sDAEsZ_S@I{pA_SA@qu@gBuBEwVhcAEZekHgLP
+@property (nonatomic, copy) NSString * _Nonnull originalShape;
 /// Resolution of the shape of the returned route.
 /// This property has no effect on the shape of the returned route’s steps.
 /// The default value of this property is <code>full</code>, specifying a low-resolution route shape.
@@ -1484,7 +1512,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 @end
 
 @class NBNavRouteLeg;
-@class NSString;
 @class NSDate;
 
 /// A <code>DirectionsResult</code> represents a result returned from either the Nbmap Directions service.
@@ -2170,6 +2197,13 @@ typedef SWIFT_ENUM_NAMED(NSInteger, NBTransportType, "TransportType", open) {
 /// The user should consult the train’s timetable. For cycling directions, the user should also verify that bicycles are permitted onboard the train.
   NBTransportTypeTrain = 7,
 };
+
+
+SWIFT_CLASS("_TtC15NbmapDirections20TravelledRawLocation")
+@interface TravelledRawLocation : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 
 
