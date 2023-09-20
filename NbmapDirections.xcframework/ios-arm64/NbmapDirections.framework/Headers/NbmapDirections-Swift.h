@@ -813,6 +813,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL supportsSecureCoding;)
 /// note:
 /// If you use NbmapDirections.swift with the Nbmap Directions API, this property is formatted and localized for display to the user. If you use OSRM directly, this property contains a basic string that only includes the maneuver type and direction. Use <a href="https://github.com/Project-OSRM/osrm-text-instructions.swift/">OSRM Text Instructions</a> to construct a complete, localized instruction string for display.
 @property (nonatomic, readonly, copy) NSString * _Nonnull instructions;
+@property (nonatomic, readonly, copy) NSString * _Nullable displayInstruction;
 /// Instructions about the next step’s maneuver, optimized for speech synthesis.
 /// As the user traverses this step, you can give them advance notice of the upcoming maneuver by reading aloud each item in this array in order as the user reaches the specified distances along this step. The text of the spoken instructions refers to the details in the next step, but the distances are measured from the beginning of this step.
 /// This property is non-<code>nil</code> if the <code>RouteOptions.includesSpokenInstructions</code> option is set to <code>true</code>. For instructions designed for display, use the <code>instructions</code> property.
