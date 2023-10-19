@@ -17,3 +17,9 @@ typedef NSString * NBMapOption NS_EXTENSIBLE_STRING_ENUM;
 
 extern NBMapOption const NBMapOptionValhalla;
 extern NBMapOption const NBMapOptionNone;
+
+typedef NSString * NBNavigationRouteType NS_EXTENSIBLE_STRING_ENUM;
+
+extern NBNavigationRouteType const NBNavigationRouteTypeFastest;
+extern NBNavigationRouteType const NBNavigationRouteTypeShortest;
+

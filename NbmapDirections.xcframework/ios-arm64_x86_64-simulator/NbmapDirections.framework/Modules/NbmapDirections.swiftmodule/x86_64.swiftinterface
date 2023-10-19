@@ -204,6 +204,7 @@ open class RoundaboutCalibrator {
   @objc open var mapOption: NbmapDirections.NBMapOption
   @objc open var truckSize: [Swift.Int]
   @objc open var truckWeight: Swift.Int
+  @objc open var routeType: NbmapDirections.NBNavigationRouteType?
   @objc override public class var supportsSecureCoding: Swift.Bool {
     @objc get
   }
