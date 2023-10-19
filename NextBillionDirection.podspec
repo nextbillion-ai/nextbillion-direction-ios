@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "NextBillionDirection"
-  spec.version      = "1.1.7"
+  spec.version      = "1.1.8"
   spec.summary      = "The nextbillion.ai iOS  Direction cocoapods repo"
 
   spec.description  = <<-DESC

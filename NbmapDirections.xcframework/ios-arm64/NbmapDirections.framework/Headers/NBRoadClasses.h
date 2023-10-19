@@ -38,5 +38,12 @@ typedef NS_OPTIONS(NSUInteger, NBRoadClasses) {
      The user must travel this segment of the route through a [tunnel](https://wiki.openstreetmap.org/wiki/Key:tunnel).
      */
     NBRoadClassesTunnel = (1 << 5),
+    
+    /**
+     The user must travel this segment of the route by UTurn.
+     Only available in Valhalla api
+     */
+    NBRoadClassesUTurn = (1 << 6),
+
 
 };

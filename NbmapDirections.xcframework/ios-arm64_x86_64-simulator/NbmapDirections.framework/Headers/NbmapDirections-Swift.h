@@ -737,6 +737,9 @@ SWIFT_CLASS_NAMED("RouteOptions")
 /// This parameter defines the weight of the truck including trailers and shipped goods in kilograms (kg). This parameter is effective only when  <code>profileIdentifier</code> is<code>NBNavigationMode6W</code>
 /// The minimum value of this propery is 1, and the maximum of this value is 100000
 @property (nonatomic) NSInteger truckWeight;
+/// Set the route type that needs to be returned.
+/// Default: fastest
+@property (nonatomic) NBNavigationRouteType _Nullable routeType;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
@@ -1914,6 +1917,9 @@ SWIFT_CLASS_NAMED("RouteOptions")
 /// This parameter defines the weight of the truck including trailers and shipped goods in kilograms (kg). This parameter is effective only when  <code>profileIdentifier</code> is<code>NBNavigationMode6W</code>
 /// The minimum value of this propery is 1, and the maximum of this value is 100000
 @property (nonatomic) NSInteger truckWeight;
+/// Set the route type that needs to be returned.
+/// Default: fastest
+@property (nonatomic) NBNavigationRouteType _Nullable routeType;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
