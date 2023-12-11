@@ -644,7 +644,7 @@ SWIFT_CLASS_NAMED("RouteLeg")
 ///
 /// \param profileIdentifier The profile identifier used to request the routes.
 ///
-- (nonnull instancetype)initWithJSON:(NSDictionary<NSString *, id> * _Nonnull)json source:(NBWaypoint * _Nonnull)source destination:(NBWaypoint * _Nonnull)destination options:(NBDirectionsOptions * _Nonnull)options drivingSide:(enum NBDrivingSide)drivingSide;
+- (nonnull instancetype)initWithJSON:(NSDictionary<NSString *, id> * _Nonnull)json source:(NBWaypoint * _Nonnull)source destination:(NBWaypoint * _Nonnull)destination options:(NBDirectionsOptions * _Nonnull)options;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
@@ -785,7 +785,7 @@ SWIFT_CLASS_NAMED("RouteStep")
 /// Normally, you do not create instances of this class directly. Instead, you receive route step objects as part of route objects when you request directions using the <code>Directions.calculateDirections(options:completionHandler:)</code> method, setting the <code>includesSteps</code> option to <code>true</code> in the <code>RouteOptions</code> object that you pass into that method.
 /// \param json A JSON object that conforms to the <a href="https://www.nbmap.com/api-documentation/#routestep-object">route step</a> format described in the Directions API documentation.
 ///
-- (nonnull instancetype)initWithJSON:(NSDictionary<NSString *, id> * _Nonnull)json options:(NBDirectionsOptions * _Nonnull)options drivingSide:(enum NBDrivingSide)drivingSide;
+- (nonnull instancetype)initWithJSON:(NSDictionary<NSString *, id> * _Nonnull)json options:(NBDirectionsOptions * _Nonnull)options;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
@@ -1080,7 +1080,7 @@ SWIFT_CLASS_NAMED("VisualInstructionBanner")
 /// A visual instruction that is presented simultaneously to provide information about an additional maneuver that occurs in rapid succession.
 /// This instruction could either contain the visual layout information or the lane information about the upcoming maneuver.
 @property (nonatomic, readonly, strong) NBVisualInstruction * _Nullable tertiaryInstruction;
-/// Which side of a bidirectional road the driver should drive on, also known as the rule of the road.
+/// Which side of a bidirectional road the driver should drive on, also known as the rule of the road. By default it will set as <code>DrivingSide.right'</code>  if in the <code>RouteStep</code> not parse the driving side successfully
 @property (nonatomic) enum NBDrivingSide drivingSide;
 /// Initializes a new visual instruction banner object based on the given JSON dictionary representation and a driving side.
 /// \param json A JSON object that conforms to the [primary or secondary banner] format described in the Directions API documentation.
@@ -1824,7 +1824,7 @@ SWIFT_CLASS_NAMED("RouteLeg")
 ///
 /// \param profileIdentifier The profile identifier used to request the routes.
 ///
-- (nonnull instancetype)initWithJSON:(NSDictionary<NSString *, id> * _Nonnull)json source:(NBWaypoint * _Nonnull)source destination:(NBWaypoint * _Nonnull)destination options:(NBDirectionsOptions * _Nonnull)options drivingSide:(enum NBDrivingSide)drivingSide;
+- (nonnull instancetype)initWithJSON:(NSDictionary<NSString *, id> * _Nonnull)json source:(NBWaypoint * _Nonnull)source destination:(NBWaypoint * _Nonnull)destination options:(NBDirectionsOptions * _Nonnull)options;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
@@ -1965,7 +1965,7 @@ SWIFT_CLASS_NAMED("RouteStep")
 /// Normally, you do not create instances of this class directly. Instead, you receive route step objects as part of route objects when you request directions using the <code>Directions.calculateDirections(options:completionHandler:)</code> method, setting the <code>includesSteps</code> option to <code>true</code> in the <code>RouteOptions</code> object that you pass into that method.
 /// \param json A JSON object that conforms to the <a href="https://www.nbmap.com/api-documentation/#routestep-object">route step</a> format described in the Directions API documentation.
 ///
-- (nonnull instancetype)initWithJSON:(NSDictionary<NSString *, id> * _Nonnull)json options:(NBDirectionsOptions * _Nonnull)options drivingSide:(enum NBDrivingSide)drivingSide;
+- (nonnull instancetype)initWithJSON:(NSDictionary<NSString *, id> * _Nonnull)json options:(NBDirectionsOptions * _Nonnull)options;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)decoder OBJC_DESIGNATED_INITIALIZER;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
@@ -2260,7 +2260,7 @@ SWIFT_CLASS_NAMED("VisualInstructionBanner")
 /// A visual instruction that is presented simultaneously to provide information about an additional maneuver that occurs in rapid succession.
 /// This instruction could either contain the visual layout information or the lane information about the upcoming maneuver.
 @property (nonatomic, readonly, strong) NBVisualInstruction * _Nullable tertiaryInstruction;
-/// Which side of a bidirectional road the driver should drive on, also known as the rule of the road.
+/// Which side of a bidirectional road the driver should drive on, also known as the rule of the road. By default it will set as <code>DrivingSide.right'</code>  if in the <code>RouteStep</code> not parse the driving side successfully
 @property (nonatomic) enum NBDrivingSide drivingSide;
 /// Initializes a new visual instruction banner object based on the given JSON dictionary representation and a driving side.
 /// \param json A JSON object that conforms to the [primary or secondary banner] format described in the Directions API documentation.

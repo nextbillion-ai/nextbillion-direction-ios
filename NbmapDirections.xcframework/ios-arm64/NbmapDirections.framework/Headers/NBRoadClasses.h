@@ -45,5 +45,8 @@ typedef NS_OPTIONS(NSUInteger, NBRoadClasses) {
      */
     NBRoadClassesUTurn = (1 << 6),
 
-
+    /**
+     Avoid nothing during the route.
+     */
+    NBRoadClassesNone = (1 << 7),
 };

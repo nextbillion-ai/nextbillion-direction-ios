@@ -279,7 +279,7 @@ extension NbmapDirections.NBLaneIndication : Swift.CustomStringConvertible {
 }
 @_hasMissingDesignatedInitializers @objc(NBNavRouteLeg) open class RouteLeg : ObjectiveC.NSObject, Foundation.NSSecureCoding {
   public init(steps: [NbmapDirections.RouteStep], name: Swift.String, distance: CoreLocation.CLLocationDistance, expectedTravelTime: Foundation.TimeInterval, source: NbmapDirections.Waypoint, destination: NbmapDirections.Waypoint, profileIdentifier: NbmapDirections.NBNavigationMode, segmentDistances: [CoreLocation.CLLocationDistance]? = nil, expectedSegmentTravelTimes: [Foundation.TimeInterval]? = nil, segmentSpeeds: [CoreLocation.CLLocationSpeed]? = nil, congestionLevels: [NbmapDirections.CongestionLevel]? = nil)
-  @objc(initWithJSON:source:destination:options:drivingSide:) convenience public init(json: [Swift.String : Any], source: NbmapDirections.Waypoint, destination: NbmapDirections.Waypoint, options: NbmapDirections.DirectionsOptions, drivingSide: NbmapDirections.DrivingSide)
+  @objc(initWithJSON:source:destination:options:) convenience public init(json: [Swift.String : Any], source: NbmapDirections.Waypoint, destination: NbmapDirections.Waypoint, options: NbmapDirections.DirectionsOptions)
   @objc required public init?(coder decoder: Foundation.NSCoder)
   @objc public static var supportsSecureCoding: Swift.Bool
   @objc public func encode(with coder: Foundation.NSCoder)
@@ -500,7 +500,7 @@ extension NbmapDirections.Route {
 }
 @_hasMissingDesignatedInitializers @objc(NBRouteStep) open class RouteStep : ObjectiveC.NSObject, Foundation.NSSecureCoding {
   public init(transportType: NbmapDirections.TransportType, maneuverType: NbmapDirections.ManeuverType, maneuverDirection: NbmapDirections.ManeuverDirection, maneuverLocation: CoreLocation.CLLocationCoordinate2D, exitIndex: Swift.Int?, instructions: Swift.String, stepCoordinates: [CoreLocation.CLLocationCoordinate2D]?, initialHeading: CoreLocation.CLLocationDirection?, finalHeading: CoreLocation.CLLocationDirection?, startLocation: CoreLocation.CLLocationCoordinate2D?, endLocation: CoreLocation.CLLocationCoordinate2D?, drivingSide: NbmapDirections.DrivingSide, exitCodes: [Swift.String]?, exitNames: [Swift.String]?, phoneticExitNames: [Swift.String]?, distance: CoreLocation.CLLocationDistance, expectedTravelTime: Foundation.TimeInterval, names: [Swift.String]?, phoneticNames: [Swift.String]?, codes: [Swift.String]?, destinationCodes: [Swift.String]?, destinations: [Swift.String]?, shiledImageUrl: Foundation.URL?, shiledLabel: Swift.String?, intersections: [NbmapDirections.Intersection]?, instructionsSpokenAlongStep: [NbmapDirections.SpokenInstruction]?, instructionsDisplayedAlongStep: [NbmapDirections.VisualInstructionBanner]?, muted: Swift.Bool?, bearing: CoreLocation.CLLocationDirection? = nil, displayInstruction: Swift.String?)
-  @objc(initWithJSON:options:drivingSide:) convenience public init(json: [Swift.String : Any], options: NbmapDirections.DirectionsOptions, drivingSide: NbmapDirections.DrivingSide)
+  @objc(initWithJSON:options:) convenience public init(json: [Swift.String : Any], options: NbmapDirections.DirectionsOptions)
   @objc required public init?(coder decoder: Foundation.NSCoder)
   @objc public static var supportsSecureCoding: Swift.Bool
   @objc public func encode(with coder: Foundation.NSCoder)
