@@ -285,7 +285,7 @@ SWIFT_CLASS_NAMED("DirectionsOptions")
 /// Do not call <code>DirectionsOptions(waypoints:profileIdentifier:)</code> directly; instead call the corresponding initializer of <code>RouteOptions</code> or <code>MatchOptions</code>.
 /// \param waypoints An array of <code>Waypoint</code> objects representing locations that the route should visit in chronological order. The array should contain at least two waypoints (the source and destination) and at most 25 waypoints. (Some profiles, such as <code>NBDirectionsProfileIdentifierAutomobileAvoidingTraffic</code>, <a href="https://www.nbmap.com/api-documentation/#directions">may have lower limits</a>.)
 ///
-/// \param profile A string specifying the primary mode of transportation for the routes. This parameter, if set, should be set to <code>NBNavigationModeCar</code>, <code>NBNavigationModeAuto</code>, <code>NBNavigationModeBike</code>, <code>NBNavigationMode2W</code>, <code>NBNavigationMode6W</code>, or <code>NBNavigationModeEscooter</code>. <code>NBNavigationMode4W</code> is used by default.
+/// \param profile A string specifying the primary mode of transportation for the routes. This parameter, if set, should be set to <code>NBNavigationModeCar</code>, <code>NBNavigationModeTruck</code>. <code>NBNavigationModeCar</code> is used by default.
 ///
 - (nonnull instancetype)initWithWaypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints profile:(NBNavigationMode _Nonnull)profile OBJC_DESIGNATED_INITIALIZER;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
@@ -303,7 +303,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 /// The List should contain at most 100 raw location data
 @property (nonatomic, copy) NSArray<TravelledRawLocation *> * _Nonnull travelledRawLocations;
 /// A string specifying the primary mode of transportation for the routes.
-/// This property should be set to <code>NBNavigationModeCar</code>, <code>NBNavigationModeAuto</code>, <code>NBNavigationModeBike</code>, <code>NBNavigationMode4W</code>,<code>NBNavigationMode2W</code>,<code>NBNavigationMode6W</code>, or <code>NBNavigationModeEscooter</code>. The default value of this property is <code>NBNavigationMode4W</code>, which specifies driving directions.
+/// This property should be set to <code>NBNavigationModeCar</code>, <code>NBNavigationModeTruck</code>. The default value of this property is <code>NBNavigationModeCar</code>, which specifies driving directions.
 @property (nonatomic) NBNavigationMode _Nonnull profileIdentifier;
 /// Format of the data from which the shapes of the returned route and its steps are derived.
 /// This property has no effect on the returned shape objects, although the choice of format can significantly affect the size of the underlying HTTP response.
@@ -682,7 +682,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL supportsSecureCoding;)
 /// Do not assume that the user would travel along the leg at a fixed speed. For the expected travel time on each individual segment along the leg, use the <code>RouteStep.expectedTravelTimes</code> property. For more granularity, specify the <code>AttributeOptions.expectedTravelTime</code> option and use the <code>expectedSegmentTravelTimes</code> property.
 @property (nonatomic, readonly) NSTimeInterval expectedTravelTime;
 /// A string specifying the primary mode of transportation for the route leg.
-/// The value of this property is <code>NBNavigationModeCar</code>, <code>NBNavigationModeAuto</code>, <code>NBNavigationModeBike</code>,<code>NBNavigationMode4W</code>,<code>NBNavigationMode2W</code>,<code>NBNavigationMode6W</code>,, or <code>NBNavigationModeEscooter</code>, depending on the <code>profileIdentifier</code> property of the original <code>RouteOptions</code> object. This property reflects the primary mode of transportation used for the route leg. Individual steps along the route leg might use different modes of transportation as necessary.
+/// The value of this property is <code>NBNavigationModeCar</code>, <code>NBNavigationModeTruck</code>, depending on the <code>profileIdentifier</code> property of the original <code>RouteOptions</code> object. This property reflects the primary mode of transportation used for the route leg. Individual steps along the route leg might use different modes of transportation as necessary.
 @property (nonatomic, readonly) NBNavigationMode _Nonnull profileIdentifier;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -697,19 +697,19 @@ SWIFT_CLASS_NAMED("RouteOptions")
 /// This initializer is intended for <code>CLLocation</code> objects created using the <code>CLLocation.init(latitude:longitude:)</code> initializer. If you intend to use a <code>CLLocation</code> object obtained from a <code>CLLocationManager</code> object, consider increasing the <code>horizontalAccuracy</code> or set it to a negative value to avoid overfitting, since the <code>Waypoint</code> class’s <code>coordinateAccuracy</code> property represents the maximum allowed deviation from the waypoint.
 /// \param locations An array of <code>CLLocation</code> objects representing locations that the route should visit in chronological order. The array should contain at least two locations (the source and destination) and at most 25 locations. Each location object is converted into a <code>Waypoint</code> object. This class respects the <code>CLLocation</code> class’s <code>coordinate</code> and <code>horizontalAccuracy</code> properties, converting them into the <code>Waypoint</code> class’s <code>coordinate</code> and <code>coordinateAccuracy</code> properties, respectively.
 ///
-/// \param mode A string specifying the primary mode of transportation for the routes. This parameter, if set, should be set to <code>NBNavigationModeCar</code>, <code>NBNavigationModeAuto</code>, <code>NBNavigationModeBike</code>,<code>NBNavigationMode4W</code>,<code>NBNavigationMode2W</code>,, or <code>NBNavigationMode6W</code>. <code>NBNavigationMode4W</code> is used by default.
+/// \param mode A string specifying the primary mode of transportation for the routes. This parameter, if set, should be set to <code>NBNavigationModeCar</code>, <code>NBNavigationModeTruck</code>. <code>NBNavigationModeCar</code> is used by default.
 ///
 - (nonnull instancetype)initWithOrigin:(CLLocation * _Nonnull)origin destination:(CLLocation * _Nonnull)destination with:(NSArray<CLLocation *> * _Nullable)locations mode:(NBNavigationMode _Nullable)mode;
 /// Initializes a route options object for routes between the given geographic coordinates and an optional profile identifier.
 /// \param coordinates An array of geographic coordinates representing locations that the route should visit in chronological order. The array should contain at least two locations (the source and destination) and at most 25 locations. Each coordinate is converted into a <code>Waypoint</code> object.
 ///
-/// \param mode A string specifying the primary mode of transportation for the routes. This parameter, if set, should be set to <code>NBNavigationModeCar</code>, <code>NBNavigationModeAuto</code>, <code>NBNavigationModeBike</code>,<code>NBNavigationMode4W</code>,<code>NBNavigationMode2W</code>,, or <code>NBNavigationMode6W</code>. <code>NBNavigationMode4W</code> is used by default.
+/// \param mode A string specifying the primary mode of transportation for the routes. This parameter, if set, should be set to <code>NBNavigationModeCar</code>, <code>NBNavigationModeTruck</code>. <code>NBNavigationModeCar</code> is used by default.
 ///
 - (nonnull instancetype)initFrom:(CLLocationCoordinate2D)origin to:(CLLocationCoordinate2D)destination with:(NSArray<NSValue *> * _Nullable)coordinates mode:(NBNavigationMode _Nullable)mode;
 /// Initializes a route options object for routes between the given waypoints and an optional profile identifier.
 /// \param waypoints An array of <code>Waypoint</code> objects representing locations that the route should visit in chronological order.
 ///
-/// \param mode A string specifying the primary mode of transportation for the routes. This parameter, if set, should be set to <code>NBNavigationModeCar</code>, <code>NBNavigationModeAuto</code>, <code>NBNavigationModeBike</code>,<code>NBNavigationMode4W</code>,<code>NBNavigationMode2W</code>,, or <code>NBNavigationMode6W</code>. <code>NBNavigationMode4W</code> is used by default.
+/// \param mode A string specifying the primary mode of transportation for the routes. This parameter, if set, should be set to <code>NBNavigationModeCar</code>, <code>NBNavigationModeTruck``. </code>NBNavigationModeCar` is used by default.
 ///
 - (nonnull instancetype)initWithOrigin:(NBWaypoint * _Nonnull)origin destination:(NBWaypoint * _Nonnull)destination waypoints:(NSArray<NBWaypoint *> * _Nullable)waypoints mode:(NBNavigationMode _Nullable)mode;
 - (nonnull instancetype)initWithWaypoints:(NSArray<NBWaypoint *> * _Nonnull)waypoints profile:(NBNavigationMode _Nonnull)profile OBJC_DESIGNATED_INITIALIZER;
@@ -732,12 +732,20 @@ SWIFT_CLASS_NAMED("RouteOptions")
 /// Width = 1000 cm
 /// Length = 5000 cm
 @property (nonatomic, copy) NSArray<NSNumber *> * _Nonnull truckSize;
-/// This parameter defines the weight of the truck including trailers and shipped goods in kilograms (kg). This parameter is effective only when  <code>profileIdentifier</code> is<code>NBNavigationMode6W</code>
+/// This parameter defines the weight of the truck including trailers and shipped goods in kilograms (kg). This parameter is effective only when  <code>profileIdentifier</code> is<code>.truck</code>
 /// The minimum value of this propery is 1, and the maximum of this value is 100000
 @property (nonatomic) NSInteger truckWeight;
 /// Set the route type that needs to be returned.
 /// Default: fastest
 @property (nonatomic) NBNavigationRouteType _Nullable routeType;
+/// Specify if crossing an international border is expected. When set to <code>false</code>, the API will place a penalty for crossing an international border through a checkpoint. Consequently, alternative routes will be preferred if they are feasible for the given set of destination or waypoints . A higher penalty is placed on a route crossing international border without a checkpoint, hence such routes will be preferred the least.
+/// When set to <code>true</code>, there will be no penalty for crossing an international border.
+/// Please note this parameter is effective only when  <code>mapOption</code> is<code>.valhalla</code>
+/// The default value is set to <code>false</code>
+@property (nonatomic) BOOL crossBorder;
+/// Specify the total load per axle (including the weight of trailers and shipped goods) of the truck, in tonnes. When used, the service will return routes which are legally allowed to carry the load specified per axle.
+/// Please note this parameter is effective only when <code>profileIdentifier</code> is <code>.truck</code> and <code>mapOption</code> is<code>.valhalla</code>
+@property (nonatomic) double truckAxleLoad;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
