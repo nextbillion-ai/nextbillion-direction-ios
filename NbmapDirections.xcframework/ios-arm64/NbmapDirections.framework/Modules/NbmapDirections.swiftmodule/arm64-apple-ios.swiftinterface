@@ -205,6 +205,9 @@ open class RoundaboutCalibrator {
   @objc open var truckSize: [Swift.Int]
   @objc open var truckWeight: Swift.Int
   @objc open var routeType: NbmapDirections.NBNavigationRouteType?
+  @objc open var crossBorder: Swift.Bool
+  open var hazmatTypes: NbmapDirections.NavigationHazmatTypes
+  @objc open var truckAxleLoad: Swift.Double
   @objc override public class var supportsSecureCoding: Swift.Bool {
     @objc get
   }
@@ -298,6 +301,23 @@ extension NbmapDirections.NBLaneIndication : Swift.CustomStringConvertible {
   @objc final public let expectedTravelTime: Foundation.TimeInterval
   @objc final public let profileIdentifier: NbmapDirections.NBNavigationMode
   @objc deinit
+}
+public struct NavigationHazmatTypes : Swift.OptionSet {
+  public let rawValue: Swift.UInt
+  public init(rawValue: Swift.UInt)
+  public static let general: NbmapDirections.NavigationHazmatTypes
+  public static let circumstantial: NbmapDirections.NavigationHazmatTypes
+  public static let explosive: NbmapDirections.NavigationHazmatTypes
+  public static let harmfulToWater: NbmapDirections.NavigationHazmatTypes
+  public typealias ArrayLiteralElement = NbmapDirections.NavigationHazmatTypes
+  public typealias Element = NbmapDirections.NavigationHazmatTypes
+  public typealias RawValue = Swift.UInt
+}
+extension NbmapDirections.NavigationHazmatTypes : Swift.CustomStringConvertible {
+  public init?(descriptions: [Swift.String])
+  public var description: Swift.String {
+    get
+  }
 }
 @objc(NBLaneIndicationComponent) open class LaneIndicationComponent : ObjectiveC.NSObject, NbmapDirections.ComponentRepresentable {
   @objc public var indications: NbmapDirections.LaneIndication

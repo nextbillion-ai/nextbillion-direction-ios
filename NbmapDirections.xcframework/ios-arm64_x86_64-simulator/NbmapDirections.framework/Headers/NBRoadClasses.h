@@ -44,9 +44,22 @@ typedef NS_OPTIONS(NSUInteger, NBRoadClasses) {
      Only available in Valhalla api
      */
     NBRoadClassesUTurn = (1 << 6),
+    
+    /**
+     The user must travel this segment of the route by sharp turn.
+     Only available in Valhalla api
+     */
+    NBRoadClassesSharpTurn = (1 << 7),
+    
+    
+    /**
+     The user must travel this segment of the route by sharp turn.
+     Only available in Valhalla api
+     */
+    NBRoadClassesServiceRoad = (1 << 8),
 
     /**
      Avoid nothing during the route.
      */
-    NBRoadClassesNone = (1 << 7),
+    NBRoadClassesNone = (1 << 9),
 };
