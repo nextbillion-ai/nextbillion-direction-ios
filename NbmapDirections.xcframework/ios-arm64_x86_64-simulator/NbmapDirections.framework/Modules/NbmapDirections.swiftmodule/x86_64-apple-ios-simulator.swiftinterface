@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
-// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name NbmapDirections
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name NbmapDirections
 import CoreLocation
 import Foundation
 import MapKit
@@ -8,6 +8,8 @@ import MapKit
 import Swift
 import UIKit
 import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
 public typealias LocationCoordinate2D = CoreLocation.CLLocationCoordinate2D
 public struct Polyline {
   public let coordinates: [NbmapDirections.LocationCoordinate2D]?
@@ -78,9 +80,9 @@ extension NbmapDirections.NBRoadClasses : Swift.CustomStringConvertible {
   @objc final public let instruction: Swift.String?
   @objc public var maneuverType: NbmapDirections.ManeuverType
   @objc public var maneuverDirection: NbmapDirections.ManeuverDirection
-  @objc final public let components: [NbmapDirections.ComponentRepresentable]
+  @objc final public let components: [any NbmapDirections.ComponentRepresentable]
   @objc public var finalHeading: Swift.Double
-  @objc public init(text: Swift.String?, instruction: Swift.String?, maneuverType: NbmapDirections.ManeuverType, maneuverDirection: NbmapDirections.ManeuverDirection, components: [NbmapDirections.ComponentRepresentable], degrees: CoreLocation.CLLocationDegrees = 180)
+  @objc public init(text: Swift.String?, instruction: Swift.String?, maneuverType: NbmapDirections.ManeuverType, maneuverDirection: NbmapDirections.ManeuverDirection, components: [any NbmapDirections.ComponentRepresentable], degrees: CoreLocation.CLLocationDegrees = 180)
   @objc(initWithJSON:) convenience public init(json: [Swift.String : Any])
   @objc required public init?(coder decoder: Foundation.NSCoder)
   @objc public func encode(with coder: Foundation.NSCoder)
@@ -196,6 +198,9 @@ open class RoundaboutCalibrator {
     get
   }
   open var accessToken: Swift.String {
+    get
+  }
+  open var apiKeyHeaderName: Swift.String? {
     get
   }
   @objc open var includesAlternativeRoutes: Swift.Bool
