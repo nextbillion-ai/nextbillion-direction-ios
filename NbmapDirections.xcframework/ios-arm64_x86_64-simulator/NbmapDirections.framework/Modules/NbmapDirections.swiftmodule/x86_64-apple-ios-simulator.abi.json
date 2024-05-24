@@ -14217,6 +14217,13 @@
         "moduleName": "NbmapDirections"
       },
       {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "NbmapDirections"
+      },
+      {
         "kind": "Var",
         "name": "NBDirectionsErrorDomain",
         "printedName": "NBDirectionsErrorDomain",
@@ -14319,6 +14326,112 @@
                   "ObjC"
                 ],
                 "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "userId",
+            "printedName": "userId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15NbmapDirections0B0C6userIdSSSgvp",
+            "mangledName": "$s15NbmapDirections0B0C6userIdSSSgvp",
+            "moduleName": "NbmapDirections",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapDirections0B0C6userIdSSSgvg",
+                "mangledName": "$s15NbmapDirections0B0C6userIdSSSgvg",
+                "moduleName": "NbmapDirections",
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapDirections0B0C6userIdSSSgvs",
+                "mangledName": "$s15NbmapDirections0B0C6userIdSSSgvs",
+                "moduleName": "NbmapDirections",
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapDirections0B0C6userIdSSSgvM",
+                "mangledName": "$s15NbmapDirections0B0C6userIdSSSgvM",
+                "moduleName": "NbmapDirections",
+                "implicit": true,
+                "accessorKind": "_modify"
               }
             ]
           },
@@ -24390,240 +24503,296 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 161,
+      "offset": 174,
       "length": 25,
       "value": "\"NBDirectionsErrorDomain\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "Array",
-      "offset": 334,
+      "offset": 347,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 391,
+      "offset": 404,
       "length": 14,
       "value": "\"CFBundleName\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 449,
+      "offset": 462,
       "length": 20,
       "value": "\"CFBundleIdentifier\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 534,
+      "offset": 547,
       "length": 28,
       "value": "\"CFBundleShortVersionString\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 578,
+      "offset": 591,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 635,
+      "offset": 648,
       "length": 17,
       "value": "\"CFBundleVersion\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 668,
+      "offset": 681,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 697,
+      "offset": 710,
       "length": 40,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 708,
+      "offset": 721,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 719,
+      "offset": 732,
       "length": 1,
       "value": "\" (\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 735,
+      "offset": 748,
       "length": 1,
       "value": "\")\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 873,
+      "offset": 886,
       "length": 14,
       "value": "\"CFBundleName\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 946,
+      "offset": 959,
       "length": 28,
       "value": "\"CFBundleShortVersionString\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1015,
+      "offset": 1028,
       "length": 27,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1030,
+      "offset": 1043,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1041,
+      "offset": 1054,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1108,
+      "offset": 1121,
       "length": 14,
       "value": "\"GIT_REVISION\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1138,
+      "offset": 1151,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1163,
+      "offset": 1176,
       "length": 18,
       "value": "\"(\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1179,
+      "offset": 1192,
       "length": 1,
       "value": "\")\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1289,
+      "offset": 1302,
       "length": 5,
       "value": "\"iOS\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1532,
+      "offset": 1545,
       "length": 101,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1542,
+      "offset": 1555,
       "length": 1,
       "value": "\"\/\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1572,
+      "offset": 1585,
       "length": 1,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1602,
+      "offset": 1615,
       "length": 1,
       "value": "\".\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1632,
+      "offset": 1645,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1697,
+      "offset": 1710,
       "length": 8,
       "value": "\"x86_64\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1874,
+      "offset": 1887,
       "length": 11,
       "value": "\"(\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1883,
+      "offset": 1896,
       "length": 1,
       "value": "\")\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1914,
+      "offset": 1927,
       "length": 16,
       "value": "\"nbid\/\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1929,
+      "offset": 1942,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 1977,
+      "offset": 1968,
+      "length": 43,
+      "value": "\"(\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
+      "kind": "StringLiteral",
+      "offset": 2009,
+      "length": 1,
+      "value": "\")\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
+      "kind": "StringLiteral",
+      "offset": 2036,
+      "length": 7,
+      "value": "\"Apple\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
+      "kind": "StringLiteral",
+      "offset": 2157,
+      "length": 18,
+      "value": "\"userid\/\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
+      "kind": "StringLiteral",
+      "offset": 2174,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
+      "kind": "StringLiteral",
+      "offset": 2228,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 2030,
+      "offset": 2281,
       "length": 7,
       "value": "\"NB_ID\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
+      "kind": "StringLiteral",
+      "offset": 2530,
+      "length": 3,
+      "value": "\"-\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
+      "kind": "StringLiteral",
+      "offset": 2541,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
+      "kind": "StringLiteral",
+      "offset": 2680,
+      "length": 16,
+      "value": "\"CUSTOM_USER_ID\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBSpokenInstruction.swift",
