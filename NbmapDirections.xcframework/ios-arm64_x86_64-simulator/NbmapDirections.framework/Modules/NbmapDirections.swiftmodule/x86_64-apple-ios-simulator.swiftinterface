@@ -351,6 +351,7 @@ public let NBDirectionsErrorDomain: Swift.String
     get
     set
   }
+  final public let nbId: Swift.String
   @discardableResult
   @objc(calculateNavigationWithOptions:completionHandler:) open func calculate(_ options: NbmapDirections.RouteOptions, completionHandler: @escaping NbmapDirections.Directions.RouteCompletionHandler) -> Foundation.URLSessionDataTask
   @objc(URLForCalculatingDirectionsWithOptions:) open func url(forCalculating options: NbmapDirections.DirectionsOptions) -> Foundation.URL
