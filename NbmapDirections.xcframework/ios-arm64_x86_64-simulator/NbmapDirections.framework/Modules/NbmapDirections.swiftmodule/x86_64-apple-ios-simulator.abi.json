@@ -14436,6 +14436,56 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "nbId",
+            "printedName": "nbId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:15NbmapDirections0B0C4nbIdSSvp",
+            "mangledName": "$s15NbmapDirections0B0C4nbIdSSvp",
+            "moduleName": "NbmapDirections",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:15NbmapDirections0B0C4nbIdSSvg",
+                "mangledName": "$s15NbmapDirections0B0C4nbIdSSvg",
+                "moduleName": "NbmapDirections",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Function",
             "name": "calculate",
             "printedName": "calculate(_:completionHandler:)",
