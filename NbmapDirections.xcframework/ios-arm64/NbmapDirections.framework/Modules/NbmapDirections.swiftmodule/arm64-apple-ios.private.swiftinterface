@@ -347,10 +347,6 @@ public let NBDirectionsErrorDomain: Swift.String
 @_inheritsConvenienceInitializers @objc(NBDirections) open class Directions : ObjectiveC.NSObject {
   public typealias RouteCompletionHandler = (_ routes: [NbmapDirections.Route]?, _ error: Foundation.NSError?) -> Swift.Void
   @objc(sharedDirections) public static let shared: NbmapDirections.Directions
-  public var userId: Swift.String? {
-    get
-    set
-  }
   final public let nbId: Swift.String
   @discardableResult
   @objc(calculateNavigationWithOptions:completionHandler:) open func calculate(_ options: NbmapDirections.RouteOptions, completionHandler: @escaping NbmapDirections.Directions.RouteCompletionHandler) -> Foundation.URLSessionDataTask
