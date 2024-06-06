@@ -14214,6 +14214,23 @@
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
+        "moduleName": "NbmapDirections",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "NbmapDirections"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
         "moduleName": "NbmapDirections"
       },
       {
@@ -24720,49 +24737,49 @@
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 2405,
+      "offset": 2411,
       "length": 18,
       "value": "\"userid\/\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 2422,
+      "offset": 2428,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 2476,
+      "offset": 2482,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 2529,
+      "offset": 2535,
       "length": 18,
       "value": "\"nbmap_userid_key\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 2789,
+      "offset": 2795,
       "length": 3,
       "value": "\"-\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 2800,
+      "offset": 2806,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/qiu\/Desktop\/nb_workspace\/ios\/nb-directions-ios2\/NbmapDirections\/NBDirections.swift",
       "kind": "StringLiteral",
-      "offset": 2939,
+      "offset": 2945,
       "length": 25,
       "value": "\"nbmap_custom_userid_key\""
     },

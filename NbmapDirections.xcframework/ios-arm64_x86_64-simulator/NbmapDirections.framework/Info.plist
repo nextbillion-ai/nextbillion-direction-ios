@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2.3</string>
+	<string>1.2.4</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -43,7 +43,7 @@
 	<key>DTXcodeBuild</key>
 	<string>15E204a</string>
 	<key>GIT_REVISION</key>
-	<string>4cf7f32</string>
+	<string>b34c240</string>
 	<key>MinimumOSVersion</key>
 	<string>12.0</string>
 	<key>NSHumanReadableCopyright</key>
